@@ -3440,9 +3440,9 @@ input, select, textarea {
 
 		#banner:after {
 			background-image: -webkit-linear-gradient(rgba(255,0,0,0.2), rgba(0,0,0,0.7)), url("../images/wallpaper.jpg");
-			/*background-image: url("images/wallpaper.jpg");
-			background-image: url("images/wallpaper.jpg");
-			background-image: url("images/wallpaper.jpg");*/
+			background-image: -moz-linear-gradient(rgba(255,0,0,0.2), rgba(0,0,0,0.7)), url("../images/wallpaper.jpg");
+			background-image: -ms-linear-gradient(rgba(255,0,0,0.2), rgba(0,0,0,0.7)), url("../images/wallpaper.jpg");
+			background-image: linear-gradient(rgba(255,0,0,0.2), rgba(0,0,0,0.7)), url("../images/wallpaper.jpg");
 			/*filter:  brightness(0.65);*/
 			content: '';
 			display: block;
