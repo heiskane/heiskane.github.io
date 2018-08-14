@@ -3439,10 +3439,10 @@ input, select, textarea {
 		}
 
 		#banner:after {
+			background-image: url("../images/wallpaper.jpg");
+			/*background-image: url("images/wallpaper.jpg");
 			background-image: url("images/wallpaper.jpg");
-			background-image: url("images/wallpaper.jpg");
-			background-image: url("images/wallpaper.jpg");
-			background-image: url("images/wallpaper.jpg");
+			background-image: url("images/wallpaper.jpg");*/
 			filter: brightness(75%);
 			content: '';
 			display: block;
