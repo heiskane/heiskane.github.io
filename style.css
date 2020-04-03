@@ -107,7 +107,7 @@ input, select {
     position: fixed;
     width: 100%;
     height: 10vh;
-    background-color: #1c1c1c;
+    background-color: #242424;
     margin-bottom: 150px;
     text-align: left;
     font-size: 80px;
@@ -130,7 +130,7 @@ input, select {
     width: 100%;
     position: fixed;
     z-index: -1;
-    text-shadow: 5px 5px 8px #111;
+    text-shadow: 6px 6px 6px #111;
     color: #FFF;
     font-size: 150px;
     text-align: center;
