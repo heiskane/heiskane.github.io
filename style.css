@@ -130,7 +130,7 @@ input, select {
     width: 100%;
     position: fixed;
     z-index: -1;
-    text-shadow: 6px 6px 6px #111;
+    text-shadow: 6px 6px 7px #111;
     color: #FFF;
     font-size: 150px;
     text-align: center;
