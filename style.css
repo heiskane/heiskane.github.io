@@ -110,7 +110,7 @@ input, select {
     background-color: #242424;
     margin-bottom: 150px;
     text-align: left;
-    font-size: 80px;
+    font-size: 60px;
 }
 
 .background-image {
@@ -143,8 +143,31 @@ input, select {
     background-color: #121212;
 }
 
-.fix header {
+.nav header {
     padding-top: 1px;
+}
+
+/* bg-image fix^ */
+
+.nav ul {
+  list-style-type: none;
+  overflow: hidden;
+}
+
+.nav li {
+    float: left;
+}
+
+.nav li a {
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    padding: 16px 20px;
+    color: #FFF;
+}
+
+.nav li a:hover {
+    background-color: #121212;
 }
 
 .container {
