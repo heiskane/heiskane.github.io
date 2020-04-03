@@ -114,7 +114,7 @@ input, select {
 
 .background-image {
     width: 100%;
-    height: 1100px;
+    height: 100vh;
     position: fixed;
     z-index: -1;
     background-image: url("header.jpg");
@@ -125,7 +125,7 @@ input, select {
 }
 
 .bg-image-text {
-    padding-top: 16%;
+    padding-top: 45vh;
     width: 100%;
     position: fixed;
     z-index: -1;
@@ -138,7 +138,7 @@ input, select {
 .main {
     height: auto;
     width: 100%;
-    margin-top: 35%;
+    margin-top: 100vh;
     background-color: #121212;
 }
 
