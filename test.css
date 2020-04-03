@@ -114,7 +114,7 @@ input, select {
 
 .background-image {
     width: 100%;
-    height: 1000px;
+    height: 800px;
     position: fixed;
     z-index: -1;
     background-image: url("header.jpg");
@@ -124,15 +124,8 @@ input, select {
     color: #FFFFFF;
 }
 
-.main {
-    height: auto;
-    width: 100%;
-    margin-top: 1000px;
-    background-color: #121212;
-}
-
 .bg-image-text {
-    padding-top: 450px;
+    padding-top: 12%;
     width: 100%;
     position: fixed;
     z-index: -1;
@@ -142,6 +135,12 @@ input, select {
     text-align: center;
 }
 
+.main {
+    height: auto;
+    width: 100%;
+    margin-top: 25%;
+    background-color: #121212;
+}
 
 .fix header {
     padding-top: 1px;
