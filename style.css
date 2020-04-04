@@ -194,6 +194,7 @@ input, select {
     font-size: 24px;
     border-radius: 30px;
     color: #cccccc;
+    font-family: 'Roboto', sans-serif;
 }
 
 .text h1 {
