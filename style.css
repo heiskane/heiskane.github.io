@@ -205,10 +205,10 @@ input, select {
     text-decoration: none;
 }
 
-.links a:hover {
-    color: #cccccc;
-}
-
 .links a:visited {
     color: #76bdd5;
+}
+
+.links a:hover {
+    color: #cccccc;
 }
