@@ -23,17 +23,26 @@
 	</div>
 	<div class="main">
 		<div class="wrapper">
-			<p class="text">Weaponization</br>
+			<p class="text">
+			Weaponization</br>
+
 			WannaCry is installed by a malicious DLL dropper that attempts to connect to a hardcoded URI upon execution. If the connection is successful, the worm stops running and exits. If the connection fails, dropper attempts to create a service named “mssecsvc2.0”. The dropper then extracts the encrypter binary, writes it and then executes it.
 			</br></br>
+
 			Delivery</br>
+
 			WannaCry was most likely delivered to victims as a malicious email attachment and spread to anyone on the network using a vulnerability in SMB protocol. Exploit was found by the NSA then stolen from them and later sold by a group called Shadow Brokers.</br></br>
-			Exploit</br>
-			Installation</br>
+
+			Installation/Exploit</br>
+
 			WannaCry encrypts all files with the specified extensions using Microsoft Enhanced RSA and AES Cryptographic Provider libraries and holds these files hostage until pays ransom in exchange for the decryptions key.</br></br>
+
 			Command and Control</br>
+
 			WannaCry installs the Tor network anonymity software on the infected system. Tor establishes a SOCKS5 proxy server on the loopback interface (127.0.0.1) that listens on TCP port 9050. WannaCry then connects to this proxy and attempts to contact one of the command and control servers. After connecting to one of the servers, the malware uses a custom encrypted protocol over TCP port 80 through the Tor circuit to transmit encryption keys, to allow victims to communicate with the operators, and to check payment status.</br></br>
+
 			Actions</br>
+			
 			After infecting a system demands a ransom to be paid in bitcoin and displays a timer that counts down to the date when the ransom is doubled and when files will be irrecoverable. WannaCry had spread around the world, infecting more than 230,000 computers in 150 countries and costing approximately $4 billion in financial losses.
 			</p>
 			</br>
