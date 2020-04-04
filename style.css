@@ -180,7 +180,7 @@ input, select {
     background-color: #121212;
     margin-right: auto;
     margin-left:  auto;
-    width: 1800px;
+    width: 1300px;
     max-width: 85%;
 }
 
@@ -193,5 +193,9 @@ input, select {
     margin-bottom: 60px;
     font-size: 24px;
     border-radius: 30px;
-    color: #ececec;
+    color: #cccccc;
+}
+
+.text h1 {
+    font-size: 40px;
 }

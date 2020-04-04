@@ -23,28 +23,32 @@
 	</div>
 	<div class="main">
 		<div class="wrapper">
-			<p class="text">
-			Weaponization</br>
+			<div class="text">
+			<h1>Weaponization</h1></br>
 
-			WannaCry is installed by a malicious DLL dropper that attempts to connect to a hardcoded URI upon execution. If the connection is successful, the worm stops running and exits. If the connection fails, dropper attempts to create a service named “mssecsvc2.0”. The dropper then extracts the encrypter binary, writes it and then executes it.
-			</br></br>
+			WannaCry is installed by a malicious DLL dropper that attempts to connect to a hardcoded URI upon execution. If the connection is successful, the worm stops running and exits. If the connection fails, dropper attempts to create a service named “mssecsvc2.0”. After that dropper extracts the encrypter binary, writes it and then executes it.
+			</br></br></br></br>
 
-			Delivery</br>
+			<h1>Delivery</h1></br>
 
-			WannaCry was most likely delivered to victims as a malicious email attachment and spread to anyone on the network using a vulnerability in SMB protocol. Exploit was found by the NSA then stolen from them and later sold by a group called Shadow Brokers.</br></br>
+			WannaCry was most likely delivered to victims as a malicious email attachment and spread to anyone on the network using a vulnerability in SMB protocol.</br></br></br></br>
 
-			Installation/Exploit</br>
+			<h1>Exploit</h1></br>
 
-			WannaCry encrypts all files with the specified extensions using Microsoft Enhanced RSA and AES Cryptographic Provider libraries and holds these files hostage until pays ransom in exchange for the decryptions key.</br></br>
+			WannaCry utilizes the Eternal Blue exploit that allows attackers to remotely execute code and gain access to a network by sending specially crafted packets. It exploits a software vulnerability in Server Message Block (SMB) version 1 protocol, a network file sharing protocol that allows access to files on a remote server. Exploit was found by the NSA then stolen from them and later sold by a group called Shadow Brokers.</br></br></br></br>
 
-			Command and Control</br>
+			<h1>Installation</h1></br>
 
-			WannaCry installs the Tor network anonymity software on the infected system. Tor establishes a SOCKS5 proxy server on the loopback interface (127.0.0.1) that listens on TCP port 9050. WannaCry then connects to this proxy and attempts to contact one of the command and control servers. After connecting to one of the servers, the malware uses a custom encrypted protocol over TCP port 80 through the Tor circuit to transmit encryption keys, to allow victims to communicate with the operators, and to check payment status.</br></br>
+			WannaCry encrypts all files with the specified extensions using Microsoft Enhanced RSA and AES Cryptographic Provider libraries and holds these files hostage until pays ransom in exchange for the decryptions key.</br></br></br></br>
 
-			Actions</br>
-			
-			After infecting a system demands a ransom to be paid in bitcoin and displays a timer that counts down to the date when the ransom is doubled and when files will be irrecoverable. WannaCry had spread around the world, infecting more than 230,000 computers in 150 countries and costing approximately $4 billion in financial losses.
-			</p>
+			<h1>Command and Control</h1></br>
+
+			WannaCry installs the Tor network anonymity software on the infected system. Tor establishes a SOCKS5 proxy server on the loopback interface (127.0.0.1) that listens on TCP port 9050. WannaCry then connects to this proxy and attempts to contact one of the command and control servers. After connecting to one of the servers, the malware uses a custom encrypted protocol over TCP port 80 through the Tor circuit to transmit encryption keys, to allow victims to communicate with the operators, and to check payment status.</br></br></br></br>
+
+			<h1>Actions</h1></br>
+
+			After infecting a system WannaCry demands a ransom to be paid in bitcoin and displays a timer that counts down to the date when the ransom is doubled and when files will be irrecoverable. WannaCry had spread around the world, infecting more than 230,000 computers in 150 countries and costing approximately $4 billion in financial losses.
+			</div>
 			</br>
 			</br>
 			</br>
