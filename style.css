@@ -187,7 +187,7 @@ input, select {
 .text {
     float: center;
     background-color: #212121;
-    padding: 100px;
+    padding: 80px;
     line-height: 40px;
     margin-bottom: 60px;
     font-size: 24px;
@@ -201,9 +201,14 @@ input, select {
 }
 
 .links a {
-    color: #6821ab;
+    color: #8f3eda;
     text-decoration: none;
 }
 
 .links a:hover {
     color: #cccccc;
+}
+
+.links a:visited {
+    color: lightblue;
+}
