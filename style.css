@@ -162,11 +162,30 @@ input, select {
     text-decoration: none;
     text-align: center;
     padding: 16px 25px;
-    color: #FFF;
+    color: #cccccc;
 }
 
 .nav li a:hover {
     background-color: #121212;
+}
+
+.nav ul li ul {
+    display: none;
+    position: absolute;
+    background-color: #292929;
+    width: 183px;
+    color: #cccccc;
+    padding-right: 40px;
+}
+
+.nav ul li ul li a {
+    text-align: left;
+    padding: 20px;
+    padding-right: 200px;
+}
+
+.nav ul li:hover ul {
+    display: block;
 }
 
 .container {
