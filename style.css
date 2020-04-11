@@ -240,3 +240,11 @@ input, select {
 .links a:hover {
     color: #cccccc;
 }
+
+@media only screen and (max-width: 800px) {
+    
+    .text img {
+        height: auto;
+        width: 60%;
+    }
+}
