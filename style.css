@@ -173,7 +173,7 @@ input, select {
     display: none;
     position: absolute;
     background-color: #292929;
-    width: 183px;
+    width: 237px;
     color: #cccccc;
     padding-right: 40px;
 }
@@ -217,6 +217,15 @@ input, select {
 
 .text h1 {
     font-size: 40px;
+}
+
+.text h2 {
+    font-size: 60px;
+}
+
+.text h3 {
+    font-size: 90px;
+    text-align: center;
 }
 
 .links a {
