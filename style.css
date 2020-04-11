@@ -201,6 +201,7 @@ input, select {
     margin-left:  auto;
     width: 1300px;
     max-width: 85%;
+
 }
 
 .text {
@@ -213,6 +214,7 @@ input, select {
     border-radius: 30px;
     color: #cccccc;
     font-family: 'Roboto', sans-serif;
+    word-wrap: break-word;
 }
 
 .text h1 {
@@ -241,10 +243,10 @@ input, select {
     color: #cccccc;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 1200px) {
     
     .text img {
         height: auto;
-        width: 60%;
+        width: 700px;
     }
 }
