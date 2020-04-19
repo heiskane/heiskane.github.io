@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/c041fe29b5.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>Niko Heiskanen</title>
+</head>
+<body>
+	<div class="nav">	
+		<header>
+			<div class="top">
+				<ul>
+					<li><a href="#">Webgoat</a></li>
+					<li><a href="#">HTB</a>
+						<ul>
+							<li><a href="htb/obscurity.html">Obscurity</a></li>
+							<li><a href="#">Ipsum</a></li>
+						</ul>
+					</li>
+					<li><a href="h3.html">H3</a></li>
+					<li><a href="cincan.html">CinCan</a></li>
+				</ul>
+			</div>
+			<div class="background-image"></div>
+			<p class="bg-image-text">Niko Heiskanen<br><br><i class="fas fa-chevron-down"></i></p>
+			<div class="main"></div>
+		</header>
+	</div>
+	<div class="main">
+		<div class="wrapper">
+			<div class="text">
+				<h3>CinCan</h3><br><br><br>
+				<p>I decided to try setting up CinCan in advance and used a fresh Ubuntu 18.04 for it. Since its a fresh install there is a few things to do first. I started my fixing the display resolution using a few commands seen in the image.</p><br><br><br>
+
+				<img src="img/cin1.png">
+				<p>After that i started by doing the usual sudo apt update and upgrade to make sure everything is up to date. I also installed vim and tmux then ran “echo 'set -g default-terminal "screen-256color"' > ~/.tmux.conf” to set tmux to use some nice colors. I installed docker and docker-compose but had to re-install those later. I used "git clone" to clone the repository as instructed. Navigating the environment directory i ran "sudo bash build.sh -e BUILD_PATH=/opt/cincan" but this gave me an error and required apache2-utils. I simply used apt to install those and tried again.</p><br><br><br>
+
+				<img src="img/cin2.png">
+				<p>Going into /opt/cincan/build and trying to run the docker compose command it gave another error. After some troubleshooting i figured out that the required version of docker-compose is 1.18.0+ despite the README file saying that version 1.17.1 is required (which i had). I went to the docker-compose github page and chose to use version 1.25.4<br>
+				Docker-Compose Versions > <div class="links"><a href="https://github.com/docker/compose/releases" target="_blank">https://github.com/docker/compose/releases</a></div><br>
+				I used these commands to install it (after removing the old version using “sudp apt remove docker-compose”).<br>curl -L https://github.com/docker/compose/releases/download/1.25.4/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose<br>
+				chmod +x /usr/local/bin/docker-compose</p><br><br><br>
+
+				<img src="img/cin3.png">
+				<img src="img/cin4.png">
+				<p>After fixing the issues with docker compose doing the docker compose command gave some error saying that docker is runnung in an unexpected location. I had been trying to fix if earlier so i might have broken something so i just re-installed it by following the steps on dockers site after which the docker compose command ran as expected.</p><br>
+				<div class="links"><a href="https://docs.docker.com/engine/install/ubuntu/" target="_blank">https://docs.docker.com/engine/install/ubuntu/</a></div><br><br><br>
+
+				<img src="img/cin5.png">
+				<img src="img/cin6.png">
+				<p>Navigating to https://172.20.0.3 i got to the concourse page. Took me a while to figure out the credentials but i eventually looked at the README file properly and found the credentails to log in with.</p><br><br><br>
+
+				<img src="img/cin7.png">
+				<img src="img/cin8.png">
+				<p>Actually closing everything down also gave me some error but this is probably enough initial testing for now.</p><br><br><br>
+
+				<img src="img/cin9.png">
+			</div>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+		</div>
+	</div>
+</body>
+</html>
