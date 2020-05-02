@@ -22,6 +22,7 @@
 					</li>
 					<li><a href="h3.html">H3</a></li>
 					<li><a href="cincan.html">CinCan</a></li>
+					<li><a href="h5.html">H5</a></li>
 				</ul>
 			</div>
 			<div class="background-image"></div>
@@ -48,7 +49,7 @@
 				<h1>Bypass a Path Based Access Control Scheme</h1><br>
 				<img src="img/2.png"><br>
 				<img src="img/burp1.png"><br>
-				<img src="img/burp2.png"><br>
+				<img src="img/burp2.png" style="width: 75%; height: auto;"><br>
 				<img src="img/burp3.png">
 				<p>For this one i decided to turn on burpsuite to easily change the file the webapp was trying to access. To do this i set the interface to listen on to port 8081 from the proxy options to avoid conflict with webgoat that is running on the same port by default. After this i setup foxyproby to listen on the same port and i was ready to go. With some trial and error i found that the request seen in the image got me access to the required file by going back a few directories, going in WEB-INF and and getting me the spring-security.xml.</p><br><br>
 
