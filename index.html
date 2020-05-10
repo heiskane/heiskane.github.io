@@ -301,6 +301,25 @@
 				<img src="img/43b.png">
 				<p>Here i started by looking at the disabled input field. I looked at the source and removed the "disabled" attribute from the disabled imput to enable this field and sent a request through burp. In burp i simply gave every parameter an awful looking value filled with all kinds of bad characters and forwarded it after url encoding it to pass this one.</p><br><br><br>
 
+				<h1>XML External Entity (XXE)</h1><br>
+				<img src="img/44.png">
+				<p>To exploit this one i had to use XXE which im not very familiar with so i looked at some cheatsheets and figured out that i can create an entity that works kinda like a variable. I first set it to read /etc/passwd and put the entity in the input field but this didnt complete the lesson despite working so i had had to just list the root directory as instructed with the following command:<br>
+				&lt;?xml version="1.0"?&gt;&lt;!DOCTYPE replace [&lt;!ENTITY ent SYSTEM "file:///"&gt; ]&gt;&lt;searchForm&gt;  &lt;from&gt;&ent;&lt;/from&gt;&lt;/searchForm&gt;</p><br><br><br>
+
+				<h1>Exploit Hidden Fields</h1><br>
+				<img src="img/45.png">
+				<p>Since this was called “Exploit Hiddden Fields” i started by inpecting the HTML code and found a hidden field that determines the price. Simply changing the price and updating the cart completed the lesson.</p><br><br><br>
+
+				<h1>Exploit Unchecked Email</h1><br>
+				<img src="img/46.png"><br>
+				<img src="img/47.png"><br>
+				<img src="img/48.png"><br>
+				<p>This one was fairly simple. I started by verifying that i can write working HTML in the message with the &lt;b&gt; tags and after sending it i saw that my message was bold which confirmed my suspicion. I the created a simple JavaScript alert within script tags and sent it. It worked but i had to try sending my script to someone else as well to pass the lesson so i intercepted the request with burp and modified the “to” parameter to change the reciever and passed.</p><br><br><br>
+
+				<h1>Bypass Client Side JavaScript Validation</h1><br>
+				<img src="img/49.png">
+				<p>I assume my goal was to bypass the client side validation by intercepting the request with burp and sending the website unexpected input but for some reason sending that didnt complete the lesson. Simply entering bad input on the website seems to have worked instead. I doubt this was intended and after completing the lesson i looked at the hints which confirmed my initial assumption about how this was supposed to work.</p>
+
 
 
 
