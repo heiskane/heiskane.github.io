@@ -23,6 +23,7 @@
 					<li><a href="h3.html">H3</a></li>
 					<li><a href="cincan.html">CinCan</a></li>
 					<li><a href="h5.html">H5</a></li>
+					<li><a href="h6.html">H6</a></li>
 				</ul>
 			</div>
 			<div class="background-image"></div>
@@ -32,7 +33,8 @@
 	</div>
 	<div class="main">
 		<div class="wrapper">
-			<div class="text">
+			<div class="text links">
+				<p>This is a report for the penetration testing cource taught by <a href="http://terokarvinen.com/2020/tunkeutumistestaus-kurssi-pentest-course-ict4tn027-3003/">Tero Karvinen</a></p><br><br><br>
 				<h3>Metasploit</h3><br><br><br>
 				<p>Before starting this assigment i started reading “<div class="links"><a href="https://www.packtpub.com/networking-and-servers/mastering-metasploit-third-edition"> Mastering Metasploit - Third Edition</a></div>” book which provided lots of great tricks and ideas for me to look into so if i mention a book i read something in it will be this one unless say otherwise. To start this i make sure i got posgress installed and up to date with “sudo apt install postgress” after which i start the service by running "systemctl start postgresql". Using “ss -ltn” showed that postgers was up and listening but it was open for the world to see so i used “sudo ufw deny 5432” to close this so it only listens on localhost just in case. Now simply running “sudo msfdb intit” to start the database and “msfconsole” to actually start metasploit. Initially metasploit was giving me some errors that didnt seem to affect the actual usability and after looking into it online it seems like the errors were irrelevant but annoying so i "ruby -W0 /usr/bin/msfconsole" to ignore the warnings for now.</p><br>
 				<img src="img/h5_1.png">
