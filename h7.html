@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/c041fe29b5.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>Niko Heiskanen</title>
+</head>
+<body>
+	<div class="nav">	
+		<header>
+			<div class="top">
+				<ul>
+					<li><a href="index.html">Webgoat</a></li>
+					<li><a href="#">HTB</a>
+						<ul>
+							<li><a href="htb/obscurity.html">Obscurity</a></li>
+							<li><a href="#">Ipsum</a></li>
+						</ul>
+					</li>
+					<li><a href="h3.html">H3</a></li>
+					<li><a href="cincan.html">CinCan</a></li>
+					<li><a href="h5.html">H5</a></li>
+					<li><a href="h6.html">H6</a></li>
+					<li><a href="h6.html">H7</a></li>
+				</ul>
+			</div>
+			<div class="background-image"></div>
+			<p class="bg-image-text">Niko Heiskanen<br><br><i class="fas fa-chevron-down"></i></p>
+			<div class="main"></div>
+		</header>
+	</div>
+	<div class="main">
+		<div class="wrapper">
+			<div class="text links">
+				<p>This is a report for the penetration testing cource taught by <a href="http://terokarvinen.com/2020/tunkeutumistestaus-kurssi-pentest-course-ict4tn027-3003/">Tero Karvinen</a></p><br><br><br>
+
+				<h3>Fuzzing</h3><br><br><br>
+				<p>To start with some basic fuzzing i used ffuf to target OWASP Juice Shop that i downloaded with “docker pull bkimminich/juice-shop” and ran with “docker run -d -p 3000:3000 bkimminich/juice-shop”. I gave ffuf a classic dirbuster wordlist with the “-w” flag and specified the target with “-u”. At the end of the target url i added the word “FUZZ” so ffuf will put words form the wordlist there.</p><br>
+				<img src="img/h7_1.png"><br>
+				<p>Running it first for a second so i can see what the responses look like and it seems like all the boring stuff has the same response code, size, amount of words and lines. I could have probably filtered any of these excluding status code but i chose to filter by size with the “-fs” flag. Note that you could also direct the output to an outfile with the “-o” flag but i had done this before so i chose not to add an outfile this time.</p><br>
+				<img src="img/h7_2.png"><br>
+				<p>Leaving ffuf running for a few minutes while writing this it found a few interesting directories. One thing to note here is that ffuf is finding the same directories with diffrent casing so the website seems case insensitive which means i could have used a lowercase wordlist to make things more efficient if not faster.</p><br>
+				<img src="img/h7_3.png"><br>
+				<p>I decided try try another tool called sqlmap for finding SQL Injection vulnerabilities. Im not sure if this counts as more of a vulnerability scanner than fuzzer but technically its fuzzing diffrent SQL Injection payloads to find vulnerabilities so i decided to include it in my report. Also its a very useful tool so why not. The easiest way to use it is to start by intercepting a request with burp.</p><br>
+				<img src="img/h7_4.png"><br>
+				<p>From there just right-clicking anywhere on the requests lets you click on “Copy to file”. i saved this file as dvwa.req then ran sqlmap with “-r” flag which makes sqlmap load the HTTP request from a file and the "--batch" makes it so that it never asks for user input and runs with default behaviour.<br>
+				Full command: sqlmap -r request_file --batch</p><br>
+				<img src="img/h7_5.png"><br>
+				<p>After a moment sqlmap found a few diffrent SQLi vulnerabilities and provided the payload used to find and exploit this vulnerability.</p><br>
+				<img src="img/h7_6.png"><br>
+				<p>One other thing sqlmap can do aswell is dump all table entries in the database which is going a bit off topic but ill do it anyway while im here. To do this all it took was appending "--dump" to the previous command.</p><br>
+				<img src="img/h7_7.png"><br>
+				<p>It only took a moment and suddenly sqlmap is spitting out cracked password? I should probably take a step back an take a look at this. First of all it seems that you maybe want to leave the “--batch” flag out in case you want to do things diffrently. So sqlmap started by using the vulnerabilities it had found and using them to dump tables then columns then the entries in the user table and recognized the hashes in the password column. Because i used “--batch” flag it didnt ask for my input and decided it wanted to start cracking these passwords with some sqlmap default wordlist and actually managed to crack them all fairly quickly.</p><br><br>
+
+				<p>I took plenty of notes from some of the previous homework and threw them into a an .md file. I posted these notes in the .md file on my github because i didnt want to try to format it properly here on the page. Github didnt seem to do a very good job of keeping all the newlines in the file but it will do for now.</p>
+				<a href="https://github.com/heiskane/heiskane.github.io/blob/master/notes.md">The notes i took over here</a>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</div>
+		<br><br>
+	</div>
+</body>
+</html>
