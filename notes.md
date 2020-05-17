@@ -1,4 +1,4 @@
-
+```
 nmap:
 Example: nmap -sV -sC -oN nmap 10.10.10.168
 Enumerate Versions: -sV
@@ -141,6 +141,8 @@ Flush Trick: print("\r" + stuff, flush=False ends="")
 
 External Sources:
 
+The following examples are taken from https://nikitushka.github.io/passwords.html
+
 Hydra
 Example :hydra -l admin -P wordlist 127.0.0.1 -s 5000 http-post-form "/:username=^USER^&password=^PASS^:Invalid Credentials. Please try again." -V
 Port number: -s
@@ -154,9 +156,7 @@ wfuzz:
 Example: wfuzz -w wordlist -d "username=admin&password=FUZZ" http://localhost:5000/
 Wordlist: -w
 Post data: -d
-
-
-https://nikitushka.github.io/passwords.html
+```
 
 
 
