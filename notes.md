@@ -156,6 +156,20 @@ wfuzz:
 Example: wfuzz -w wordlist -d "username=admin&password=FUZZ" http://localhost:5000/
 Wordlist: -w
 Post data: -d
+
+
+The following examples are taken from https://caiusinfo.data.blog/2020/05/11/tunkeutumistestaus-laksyt-viikko-6-caius-juvonen/
+
+
+medusa:
+Example: medusa -h 192.168.56.101 -u monkey -P /usr/share/wordlists/rockyou/rockyou.txt -M ssh -O medusabruteforce/telnet2_crack.txt -t 100
+Host ip: -h
+Username: -u
+Wordlist for password: -P
+Module: -M
+Outfile: -O
+Concurrents tests: -T
+
 ```
 
 

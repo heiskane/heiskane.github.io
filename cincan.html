@@ -37,7 +37,8 @@
 			<div class="text links">
 				<p>This is a report for the penetration testing cource taught by <a href="http://terokarvinen.com/2020/tunkeutumistestaus-kurssi-pentest-course-ict4tn027-3003/">Tero Karvinen</a></p><br><br><br>
 				<h3>CinCan</h3><br><br><br>
-				<p>I decided to try setting up CinCan in advance and used a fresh Ubuntu 18.04 for it. Since its a fresh install there is a few things to do first. I started my fixing the display resolution using a few commands seen in the image.</p><br><br><br>
+				<p>I decided to try setting up CinCan in advance and used a fresh Ubuntu 18.04 for it. Since its a fresh install there is a few things to do first. I started my fixing the display resolution using a few commands seen in the image.<br>
+				Note from the future: I realized that installing guest additions fixes the resolution automatically</p><br><br><br>
 
 				<img src="img/cin1.png">
 				<p>After that i started by doing the usual sudo apt update and upgrade to make sure everything is up to date. I also installed vim and tmux then ran “echo 'set -g default-terminal "screen-256color"' > ~/.tmux.conf” to set tmux to use some nice colors. I installed docker and docker-compose but had to re-install those later. I used "git clone" to clone the repository as instructed. Navigating the environment directory i ran "sudo bash build.sh -e BUILD_PATH=/opt/cincan" but this gave me an error and required apache2-utils. I simply used apt to install those and tried again.</p><br><br><br>

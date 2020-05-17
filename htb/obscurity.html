@@ -50,13 +50,18 @@
 				<p>Now to actually exploit this i intercepted a request to the page using burp to easily add and save the payload. I went to pentestmonkey.net to grab a reverse shell (link below). Since i am able to execute python on the server i chose the python reverse shell and added it to burp without the "python -c" part. Also only now i realized i didnt need to import socket, subprocess and os either since it is already imported in the code. After setting up a listener and URL encoding the whole payload i sent it and got a shell back.</p><br><div class="links"><a href="http://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet">pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet</a></div><br>
 				<img src="../img/htb6.png"><br><br><br>
 				<p>After getting the initial shell i used python to spawn a proper shell for me to work on.</p><br>
+				<p>Added the actual commands here later:<br>
+				pyhton -c 'impoty pty;pty.spawn("/bin/bash")'<br>
+				CTRZ + Z (<- to background the shell)<br>
+				stty raw -echo <br>
+				"fg" then hit enter twice to get back into the shell then run "export TERM=screen" to be able to clear screen.</p>
 				<img src="../img/htb8.png"><br><br><br>
 				<p>Navigating to the only home directory (robert) i found some interesting files.</p><br>
 				<img src="../img/htb9.png"><br><br><br>
 				<p>Also running the python file gave this output:</p><br>
 				<img src="../img/htb17.png"><br><br><br>
 				<p>First obvious file is the user.txt that contains the user flag. Looking the contents of the check.txt i see it contains this: "Encrypting this file with your key should result in out.txt, make sure your key is correct!". Looking at the out.txt and passwordreminder.txt i saw that they were obviously encrypted so it was safe to assume that the user had encrypted these files using SuperSecureCrypt.py script with his key. Looking at the python script i could see that it is doing very simple encryption by calculating "text + key = cipher" and the decryption "text - key = message". I remembered that check.txt was saying that encrypting it with a key will result in out.txt so i assumed that it was what the user robert had done. Figuring out roberts key was as easy as solving y in "x + y = c" while knowing x and c even though it took me a while to initially realize it. To do this i simply used the decrypt option for the SuperSecureCrypt.py and provided out.txt as the in file and the <b>contents</b> of check.txt as the key. Using just the content of check.txt was important because it expects text and not a file. I also specified an out file in /tmp directory like this:<br>
-					python3 SuperSecureCrypt.py -i out.txt -o /tmp/pass -k ‘Encrypting this file with your key should result in out.txt, make sure your key is correct!’ -d</p><br>
+				python3 SuperSecureCrypt.py -i out.txt -o /tmp/pass -k ‘Encrypting this file with your key should result in out.txt, make sure your key is correct!’ -d</p><br>
 				<img src="../img/htb10.png"><br><br><br>
 				<p>Doing this gave me the key "alexandrovich" so i used it to decrypt "passwordreminder.txt" and got roberts password "SecThruObsFTW". I then used "su" to change to the user robert with the password i had gotten. Running "sudo -l" as robert revealed the next step.</p><br>
 				<img src="../img/htb13.png"><br><br><br>
