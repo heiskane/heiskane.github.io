@@ -169,35 +169,6 @@ Username: -u
 Wordlist for password: -P
 Module: -M
 Outfile: -O
-Concurrents tests: -T
+Concurrents tests: -t
 
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
