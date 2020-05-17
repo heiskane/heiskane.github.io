@@ -141,6 +141,7 @@ Flush Trick: print("\r" + stuff, flush=False ends="")
 
 External Sources:
 
+
 The following examples are taken from https://nikitushka.github.io/passwords.html
 
 Hydra
@@ -159,7 +160,6 @@ Post data: -d
 
 
 The following examples are taken from https://caiusinfo.data.blog/2020/05/11/tunkeutumistestaus-laksyt-viikko-6-caius-juvonen/
-
 
 medusa:
 Example: medusa -h 192.168.56.101 -u monkey -P /usr/share/wordlists/rockyou/rockyou.txt -M ssh -O medusabruteforce/telnet2_crack.txt -t 100
